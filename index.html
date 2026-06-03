@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Murphy Sushi House — Jap'Africa Dining</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="ldr">
+  <video id="ldr-vid" muted playsinline preload="auto">
+    <source src="assets/loader.mp4" type="video/mp4">
+  </video>
+  <div class="ldr-c">
+    <img src="assets/logo.png" class="ldr-logo" alt="Murphy Sushi House">
+    <div class="ldr-name">Murphy Sushi House</div>
+    <div class="ldr-sub">Jap'Africa &middot; Cape Town</div>
+    <div class="ldr-bar"><div class="ldr-fill" id="ldr-fill"></div></div>
+  </div>
+</div>
+
+<div id="cur"></div><div id="cur2"></div>
+
+<nav id="nav">
+  <a href="#" onclick="go('home');return false;"><img src="assets/logo.png" class="nav-logo-img" alt="Murphy Sushi House"></a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="go('home');return false;" class="on" id="nl-home">Home</a></li>
+    <li><a href="#" onclick="go('about');return false;" id="nl-about">About</a></li>
+    <li><a href="#" onclick="go('experiences');return false;" id="nl-experiences">Experiences</a></li>
+    <li><a href="#" onclick="go('events');return false;" id="nl-events">Events</a></li>
+    <li><a href="#" onclick="go('contact');return false;" id="nl-contact">Contact</a></li>
+  </ul>
+  <a href="#" class="nav-cta" onclick="go('contact');return false;">Reserve</a>
+  <button class="hbg" id="hbg" onclick="mobToggle()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mob" id="mobm">
+  <a href="#" onclick="go('home');mobToggle();return false;">Home</a>
+  <a href="#" onclick="go('about');mobToggle();return false;">About</a>
+  <a href="#" onclick="go('experiences');mobToggle();return false;">Experiences</a>
+  <a href="#" onclick="go('events');mobToggle();return false;">Events</a>
+  <a href="#" onclick="go('contact');mobToggle();return false;">Contact</a>
+  <a href="#" class="mcta" onclick="go('contact');mobToggle();return false;">Reserve a Seat</a>
+</div>
+
+<div id="lb">
+  <div id="lb-wrap">
+    <img id="lb-img" src="" alt="dish">
+    <div id="lb-line"></div>
+    <button id="lb-close" onclick="closeLb()">&#x2715;</button>
+    <button id="lb-prev" onclick="lbNav(-1)">&#8249;</button>
+    <button id="lb-next" onclick="lbNav(1)">&#8250;</button>
+    <div id="lb-dots"></div>
+  </div>
+</div>
+
+<!-- HOME -->
+<div class="page on" id="page-home">
+  <section class="hero">
+    <div class="hero-bg"></div><div class="hero-grain"></div>
+    <div class="vl"></div><div class="vl"></div>
+    <div class="hero-inner">
+      <p class="h-ey">Private Chef &middot; Cape Town &middot; Est. 2020</p>
+      <img src="assets/logo.png" class="h-logo-img" alt="logo">
+      <h1 class="h-title">Murphy<em>sushi</em><br>house</h1>
+      <p class="h-sub">A refined Jap'Africa dining experience where African soul meets Japanese precision.</p>
+      <div class="h-btns">
+        <a href="#" class="bp" onclick="go('contact');return false;">Book a Private Experience</a>
+        <a href="#" class="bo" onclick="go('events');return false;">View Upcoming Events</a>
+      </div>
+    </div>
+    <div class="sc"><span>Scroll</span><div class="sc-ln"></div></div>
+  </section>
+
+  <section class="intro">
+    <span class="lbl rv">The Concept</span>
+    <p class="rv rv1">An intimate culinary journey blending <em>bold African flavours</em> with the elegance of Japanese technique. Each dish crafted to be seen, felt, and remembered.</p>
+  </section>
+
+  <section class="menu-sec">
+    <div class="menu-hdr"><span class="lbl rv">Signature Dishes</span><h2 class="ttl rv rv1">The Menu</h2></div>
+    <div class="menu-grid">
+      <div class="mc" style="transition-delay:0s" onclick="openDish(0)"><div class="mc-inner"><img src="assets/dish1.jpg" alt="Waka Waka Dish" class="mc-img"><div class="mc-overlay"></div><div class="mc-shine"></div><span class="mc-n">01</span><div class="mc-tap">&#x2197; View</div></div></div>
+      <div class="mc" style="transition-delay:.13s" onclick="openDish(1)"><div class="mc-inner"><img src="assets/dish2.jpg" alt="Crispy Oyster" class="mc-img"><div class="mc-overlay"></div><div class="mc-shine"></div><span class="mc-n">02</span><div class="mc-tap">&#x2197; View</div></div></div>
+      <div class="mc" style="transition-delay:.26s" onclick="openDish(2)"><div class="mc-inner"><img src="assets/dish3.jpg" alt="Crispy Muindu Roll" class="mc-img"><div class="mc-overlay"></div><div class="mc-shine"></div><span class="mc-n">03</span><div class="mc-tap">&#x2197; View</div></div></div>
+      <div class="mc" style="transition-delay:.39s" onclick="openDish(3)"><div class="mc-inner"><img src="assets/dish4.jpg" alt="Golden Roll" class="mc-img"><div class="mc-overlay"></div><div class="mc-shine"></div><span class="mc-n">04</span><div class="mc-tap">&#x2197; View</div></div></div>
+      <div class="mc" style="transition-delay:.52s" onclick="openDish(4)"><div class="mc-inner"><img src="assets/dish5.jpg" alt="Edamame Beans" class="mc-img"><div class="mc-overlay"></div><div class="mc-shine"></div><span class="mc-n">05</span><div class="mc-tap">&#x2197; View</div></div></div>
+    </div>
+    <p id="swipe-h" style="text-align:center;font-size:.48rem;letter-spacing:.3em;text-transform:uppercase;color:var(--g);padding:10px 0 0;opacity:.55;display:none;">&#8592; Swipe &#8594;</p>
+  </section>
+
+  <section class="exp-sec">
+    <div class="exp-grid">
+      <div><span class="lbl rv">The Experience</span><p class="exp-q rv rv1">More than dining &mdash; this is a <em>curated</em> experience.</p></div>
+      <div>
+        <div class="exp-item rv"><span class="en">01</span><div><h3>Private Dining</h3><p>Intimate, tailored menus curated exclusively for you in the comfort of your chosen space.</p></div></div>
+        <div class="exp-item rv rv1"><span class="en">02</span><div><h3>Exclusive Pop-Ups</h3><p>Social yet exclusive &mdash; a multi-course Jap'Africa experience for a curated guest list.</p></div></div>
+        <div class="exp-item rv rv2"><span class="en">03</span><div><h3>Seasonal Tasting Menus</h3><p>A journey from bold to delicate, familiar to unexpected &mdash; changing with every season.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <p class="ey">Limited Availability</p>
+    <h2>Limited seats.<br>Exclusive experiences.</h2>
+    <p>Only a select few tables available each month.</p>
+    <div class="cta-btns">
+      <a href="#" class="bd" onclick="go('contact');return false;">Reserve Your Seat</a>
+      <a href="#" class="bdo" onclick="go('contact');return false;">Book Private Dining</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-brand"><img src="assets/logo.png" class="ft-logo" alt="logo"><p>A refined Jap'Africa dining experience where African soul meets Japanese precision.</p></div>
+    <div class="ft-col"><h4>Navigate</h4><a href="#" onclick="go('home');return false;">Home</a><a href="#" onclick="go('about');return false;">About</a><a href="#" onclick="go('experiences');return false;">Experiences</a><a href="#" onclick="go('events');return false;">Events</a><a href="#" onclick="go('contact');return false;">Contact</a></div>
+    <div class="ft-col"><h4>Connect</h4><a href="https://instagram.com/murphysushihouse" target="_blank">@murphysushihouse</a><a href="https://wa.me/27000000000" target="_blank">WhatsApp</a><a href="mailto:hello@murphysushihouse.com">Email</a></div>
+    <div class="ft-bot"><p>&copy; 2020 Murphy Sushi House. All rights reserved.</p><p style="color:var(--g);font-size:.58rem;letter-spacing:.18em;">JAP'AFRICA DINING</p></div>
+  </footer>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="page-about">
+  <section class="pg-hero">
+    <div class="pg-content">
+      <span class="lbl">Our Story</span>
+      <h1>Where two worlds<br>meet on <em>one plate.</em></h1>
+      <p class="lead">The expression of a private chef driven by creativity, culture, and precision.</p>
+      <p>Founded by Murphy Mouanga, our mission is to blend the precision, harmony, and artistry of Japanese cuisine with the bold, soulful flavours of Africa &mdash; a fusion we call Jap'Africa.</p>
+      <p>Each experience is intentionally intimate &mdash; designed not only to satisfy, but to evoke emotion through flavour, texture, and presentation.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(.94rem,1.75vw,1.12rem);color:var(--w);font-style:italic;">This is not just food. It is a story told through every course.</p>
+    </div>
+  </section>
+
+  <section class="chef-sec">
+    <video class="chef-vid-bg" autoplay muted loop playsinline preload="auto">
+      <source src="assets/bg.mp4" type="video/mp4">
+    </video>
+    <div class="chef-vid-ov"></div>
+    <div class="chef-wrap">
+      <div>
+        <div class="chef-frame">
+          <img src="assets/chef.jpg" alt="Chef Murphy" class="chef-photo">
+          <div class="chef-badge">Meet Chef Murphy</div>
+        </div>
+      </div>
+      <div class="chef-text">
+        <span class="lbl">The Chef</span>
+        <h2>A vision of<br><em>culture &amp; precision</em></h2>
+        <p class="lead">Rooted in African heritage and inspired by Japanese culinary discipline &mdash; Jap'Africa was born to bring two worlds together on one plate.</p>
+        <p>Murphy's culinary journey began with a deep appreciation for Japanese technique, paired with the rich, expressive flavours of his African heritage. He discovered that food could be a bridge connecting traditions, sharing stories, and bringing people together.</p>
+        <p>Every dish is crafted with intention, creativity, and respect for both worlds &mdash; where Japanese elegance meets African warmth in every bite.</p>
+        <div class="chef-vals">
+          <div class="cv"><span class="vn">01</span><span>Heritage</span></div>
+          <div class="cv"><span class="vn">02</span><span>Precision</span></div>
+          <div class="cv"><span class="vn">03</span><span>Intimacy</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="vals-grid">
+    <div class="vc"><span class="vnum">01</span><h3>Heritage</h3><p>Rooted in the bold, communal spirit of African culinary tradition. Every dish carries the memory of a continent.</p></div>
+    <div class="vc"><span class="vnum">02</span><h3>Precision</h3><p>Informed by the meticulous discipline of Japanese technique &mdash; where restraint and mastery create the extraordinary.</p></div>
+    <div class="vc"><span class="vnum">03</span><h3>Intimacy</h3><p>Every experience is limited, personal, and intentional. You are a guest at the chef's table.</p></div>
+  </div>
+  <section style="text-align:center;padding:0 20px clamp(48px,7vw,92px);">
+    <a href="#" class="bp" onclick="go('contact');return false;">Book Your Experience</a>
+  </section>
+  <footer>
+    <div class="ft-brand"><img src="assets/logo.png" class="ft-logo" alt="logo"><p>A refined Jap'Africa dining experience.</p></div>
+    <div class="ft-col"><h4>Navigate</h4><a href="#" onclick="go('home');return false;">Home</a><a href="#" onclick="go('about');return false;">About</a><a href="#" onclick="go('experiences');return false;">Experiences</a><a href="#" onclick="go('events');return false;">Events</a><a href="#" onclick="go('contact');return false;">Contact</a></div>
+    <div class="ft-col"><h4>Connect</h4><a href="https://instagram.com/murphysushihouse" target="_blank">@murphysushihouse</a><a href="https://wa.me/27000000000" target="_blank">WhatsApp</a></div>
+    <div class="ft-bot"><p>&copy; 2020 Murphy Sushi House.</p><p style="color:var(--g);font-size:.58rem;letter-spacing:.18em;">JAP'AFRICA DINING</p></div>
+  </footer>
+</div>
+
+<!-- EXPERIENCES -->
+<div class="page" id="page-experiences">
+  <section class="pg-hero"><div class="pg-content"><span class="lbl">What We Offer</span><h1>Our<br><em>Experiences</em></h1><p class="lead">Every format is designed to be intimate, exclusive, and unforgettable.</p></div></section>
+  <div class="exps-cards" style="margin-bottom:clamp(48px,7vw,92px);">
+    <div class="ec"><div class="ec-icon">&#x1F56F;&#xFE0F;</div><h3>Private Dining</h3><p>A bespoke culinary experience in the comfort of your space. Custom menus. Refined plating. Personal service.</p><p>We come to you &mdash; transforming any setting into a fine dining environment.</p><span class="ec-tag">From 2 Guests</span></div>
+    <div class="ec"><div class="ec-icon">&#x1F37E;</div><h3>Pop-Up Events</h3><p>Social yet exclusive &mdash; a multi-course Jap'Africa experience for a curated guest list. Limited seats. Immersive atmosphere.</p><span class="ec-tag">Monthly</span></div>
+    <div class="ec"><div class="ec-icon">&#x1F37D;&#xFE0F;</div><h3>Tasting Menus</h3><p>Carefully structured courses from bold to delicate, familiar to unexpected. Changing with every season.</p><span class="ec-tag">Seasonal</span></div>
+  </div>
+  <footer>
+    <div class="ft-brand"><img src="assets/logo.png" class="ft-logo" alt="logo"><p>A refined Jap'Africa dining experience.</p></div>
+    <div class="ft-col"><h4>Navigate</h4><a href="#" onclick="go('home');return false;">Home</a><a href="#" onclick="go('about');return false;">About</a><a href="#" onclick="go('experiences');return false;">Experiences</a><a href="#" onclick="go('events');return false;">Events</a><a href="#" onclick="go('contact');return false;">Contact</a></div>
+    <div class="ft-col"><h4>Connect</h4><a href="https://instagram.com/murphysushihouse" target="_blank">@murphysushihouse</a><a href="https://wa.me/27000000000" target="_blank">WhatsApp</a></div>
+    <div class="ft-bot"><p>&copy; 2020 Murphy Sushi House.</p><p style="color:var(--g);font-size:.58rem;letter-spacing:.18em;">JAP'AFRICA DINING</p></div>
+  </footer>
+</div>
+
+<!-- EVENTS -->
+<div class="page" id="page-events">
+  <section class="pg-hero"><div class="pg-content"><span class="lbl">Secure Your Seat</span><h1>Upcoming<br><em>Experiences</em></h1><p class="lead">Limited seats at each exclusive Jap'Africa dining experience.</p></div></section>
+  <div id="evt-loading" style="text-align:center;padding:52px 20px;color:var(--m);font-size:.7rem;letter-spacing:.18em;">Loading events&hellip;</div>
+  <div class="evts-list" id="evt-list" style="display:none;"></div>
+  <div class="qkt-box" style="max-width:540px;margin:0 auto clamp(28px,4.5vw,58px);">
+    <h3>Book via Quicket</h3>
+    <p>All tickets sold exclusively through Quicket. Once seats are gone, they're gone.</p>
+    <a href="https://www.quicket.co.za/events/373771-japafrica-dining-experience/" target="_blank" class="bp">Buy Tickets on Quicket</a>
+  </div>
+  <footer>
+    <div class="ft-brand"><img src="assets/logo.png" class="ft-logo" alt="logo"><p>A refined Jap'Africa dining experience.</p></div>
+    <div class="ft-col"><h4>Navigate</h4><a href="#" onclick="go('home');return false;">Home</a><a href="#" onclick="go('about');return false;">About</a><a href="#" onclick="go('experiences');return false;">Experiences</a><a href="#" onclick="go('events');return false;">Events</a><a href="#" onclick="go('contact');return false;">Contact</a></div>
+    <div class="ft-col"><h4>Connect</h4><a href="https://instagram.com/murphysushihouse" target="_blank">@murphysushihouse</a><a href="https://wa.me/27000000000" target="_blank">WhatsApp</a></div>
+    <div class="ft-bot"><p>&copy; 2020 Murphy Sushi House.</p><p style="color:var(--g);font-size:.58rem;letter-spacing:.18em;">JAP'AFRICA DINING</p></div>
+  </footer>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="page-contact">
+  <section class="pg-hero"><div class="pg-content"><span class="lbl">Get In Touch</span><h1>Bookings &amp;<br><em>Enquiries</em></h1><p class="lead">For private dining, collaborations, or event bookings.</p></div></section>
+  <div class="con-grid">
+    <div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.05rem,2vw,1.3rem);font-weight:300;margin-bottom:22px;">Reach us directly</h3>
+      <ul class="cl-links">
+        <li><span>&#x1F4AC;</span><div><span class="cl-lbl">WhatsApp</span><a href="https://wa.me/27000000000" target="_blank">Chat on WhatsApp &rarr;</a></div></li>
+        <li><span>&#x1F4F8;</span><div><span class="cl-lbl">Instagram</span><a href="https://instagram.com/murphysushihouse" target="_blank">@murphysushihouse &rarr;</a></div></li>
+        <li><span>&#x2709;&#xFE0F;</span><div><span class="cl-lbl">Email</span><a href="mailto:hello@murphysushihouse.com">hello@murphysushihouse.com &rarr;</a></div></li>
+        <li><span>&#x1F4CD;</span><div><span class="cl-lbl">Location</span><span style="color:var(--w);font-size:clamp(.7rem,1.2vw,.78rem);">Cape Town, South Africa</span></div></li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.05rem,2vw,1.3rem);font-weight:300;margin-bottom:22px;">Send an enquiry</h3>
+      <div class="cf">
+        <div class="fg"><label>Your Name</label><input type="text" placeholder="Full name" id="f-name"></div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com" id="f-email"></div>
+        <div class="fg"><label>Enquiry Type</label>
+          <select id="f-type"><option value="">Select&hellip;</option><option>Private Dining</option><option>Pop-Up Event</option><option>Collaboration</option><option>General Enquiry</option></select>
+        </div>
+        <div class="fg"><label>Message</label><textarea placeholder="Tell us about your ideal experience&hellip;" id="f-msg"></textarea></div>
+        <button class="bp" id="f-btn" style="border:none;width:100%;font-size:.64rem;cursor:none;" onclick="submitForm()">Send Enquiry</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="ft-brand"><img src="assets/logo.png" class="ft-logo" alt="logo"><p>A refined Jap'Africa dining experience.</p></div>
+    <div class="ft-col"><h4>Navigate</h4><a href="#" onclick="go('home');return false;">Home</a><a href="#" onclick="go('about');return false;">About</a><a href="#" onclick="go('experiences');return false;">Experiences</a><a href="#" onclick="go('events');return false;">Events</a><a href="#" onclick="go('contact');return false;">Contact</a></div>
+    <div class="ft-col"><h4>Connect</h4><a href="https://instagram.com/murphysushihouse" target="_blank">@murphysushihouse</a><a href="https://wa.me/27000000000" target="_blank">WhatsApp</a></div>
+    <div class="ft-bot"><p>&copy; 2020 Murphy Sushi House.</p><p style="color:var(--g);font-size:.58rem;letter-spacing:.18em;">JAP'AFRICA DINING</p></div>
+  </footer>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
